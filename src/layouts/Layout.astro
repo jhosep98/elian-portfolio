@@ -1,0 +1,58 @@
+---
+import { IceCream } from 'lucide-react'
+import Header from "@/components/HeaderComponent.astro"
+
+interface Props {
+  title: string;
+}
+
+const {title} = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <a rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content="{Astro.generator}" />
+    <title>{title}</title>
+  </head>
+
+  <body>
+    <div class="flex flex-col min-h-screen">
+      <Header />
+
+      <slot />
+
+      <footer class="w-full py-6 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-6 flex justify-center space-x-6">
+          <a href="#" class="text-gray-600 hover:text-gray-900">
+            <IceCream className="h-6 w-6" />
+          </a>
+          <a href="#" class="text-gray-600 hover:text-gray-900">
+            <IceCream className="h-6 w-6" />
+          </a>
+          <a href="#" class="text-gray-600 hover:text-gray-900">
+            <IceCream className="h-6 w-6" />
+          </a>
+          <a href="#" class="text-gray-600 hover:text-gray-900">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.59 6.69C18.6 6.15 17.77 5.34 17.24 4.34C16.71 3.34 16.45 2.2 16.49 1.05H12.98V16.17C12.97 17.07 12.62 17.93 11.99 18.57C11.37 19.21 10.52 19.57 9.62 19.58C7.70998 19.58 6.13998 18.01 6.13998 16.1C6.13998 14.19 7.70998 12.62 9.61998 12.62C10.05 12.62 10.46 12.7 10.84 12.85V9.25C10.44 9.18 10.03 9.14 9.61998 9.14C5.78998 9.14 2.68998 12.24 2.68998 16.07C2.68998 19.9 5.78998 23 9.61998 23C13.45 23 16.55 19.9 16.55 16.07V11.12C17.83 11.97 19.33 12.44 20.87 12.48V9C20.43 9 20.01 8.89 19.59 8.71V6.69Z"
+                fill="currentColor"
+              />
+            </svg>
+            <span class="sr-only">TikTok</span>
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

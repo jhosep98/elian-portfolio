@@ -1,20 +1,24 @@
 ---
-import '@/styles/globals.css'
-import { Button } from "@/components/ui/button"
+import Layout from "@/layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-		<hr />
+<Layout title="Ele Portfolio">
+  <main class="flex-grow">
+    <section class="relative h-[calc(100vh-4rem)] bg-gray-100">
+      <img
+        alt="Hero image"
+        class="object-cover w-full h-full"
+        src="https://res.cloudinary.com/diusjfaoe/image/upload/v1672679365/cld-sample-3.jpg"
+      />
 
-		<Button>Hello World</Button>
-	</body>
-</html>
+      <div
+        class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+      >
+        <div class="text-center text-white">
+          <h2 class="text-6xl font-bold mb-4">ELE CABRERA</h2>
+          <p class="text-xl">Model</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
