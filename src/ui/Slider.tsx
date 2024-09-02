@@ -1,5 +1,5 @@
 import React from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X, CircleChevronLeft } from "lucide-react";
 
 export const Slider: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -94,33 +94,35 @@ export const Slider: React.FC = () => {
       </section>
 
       {isOpen ? (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90">
           <div className="relative max-w-screen-lg w-full">
+            {/* 
             <button
-              className="absolute top-4 left-4 text-white text-2xl"
+              className="absolute top-1/2 left-4 text-white text-4xl font-bold"
               onClick={showPrevImage}
             >
               &larr;
             </button>
-
-            <button
-              className="absolute top-4 right-4 text-white text-2xl"
+          */}
+            <ChevronLeft
+              className="absolute top-1/2 left-4 text-white text-4xl font-bold"
               onClick={showNextImage}
-            >
-              &rarr;
-            </button>
+            />
 
-            <button
-              className="absolute top-4 right-20 text-white text-2xl"
+            <ChevronRight
+              className="absolute top-1/2 right-4 text-white text-4xl font-bold focus"
+              onClick={showNextImage}
+            />
+
+            <X
+              className="absolute top-4 right-5 text-white text-2xl cursor-pointer"
               onClick={closeModal}
-            >
-              &times;
-            </button>
+            />
 
             <img
               src={images[currentImageIndex]}
               alt="Preview"
-              className="object-contain w-full h-screen"
+              className="object-contain w-full h-screen py-4"
             />
           </div>
         </div>
